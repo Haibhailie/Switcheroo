@@ -5,7 +5,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
-albedo_color = Color(0.91385967, 0.4077528, 0, 1)
+albedo_color = Color(1.732707e-06, 0.61005783, 0.937581, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i3pqv"]
 
@@ -20,6 +20,46 @@ material_override = SubResource("StandardMaterial3D_4flbx")
 mesh = SubResource("CapsuleMesh_i3pqv")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=634682252]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1495688593]
+
+[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=1647299191]
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayerUI" unique_id=1306343495]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerUI/CenterContainer" unique_id=1986455492]
+custom_minimum_size = Vector2(6, 6)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.2908947, 0.9994193, 0, 1)
+
+[node name="ScoreLabel" type="Label" parent="PlayerUI" unique_id=1971912293]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Score: 0"
+
+[node name="AmmoLabel" type="Label" parent="PlayerUI" unique_id=173556666]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -102.224976
+offset_top = -38.375
+offset_right = -18.224976
+offset_bottom = -15.375
+grow_horizontal = 0
+grow_vertical = 0
+text = "Ammo: 3/3"

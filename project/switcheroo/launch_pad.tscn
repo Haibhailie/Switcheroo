@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cyodblnqqcuug"]
+
+[ext_resource type="Script" uid="uid://bmgi6d2dr6bl4" path="res://launch_pad.gd" id="1_1wjpr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_40arq"]
+size = Vector3(2, 0.2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40arq"]
+albedo_color = Color(0.41318193, 0.7966466, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1wjpr"]
+size = Vector3(2, 0.2, 2)
+
+[node name="LaunchPad" type="Area3D" unique_id=988074978]
+script = ExtResource("1_1wjpr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=495621430]
+shape = SubResource("BoxShape3D_40arq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1633772195]
+material_override = SubResource("StandardMaterial3D_40arq")
+mesh = SubResource("BoxMesh_1wjpr")

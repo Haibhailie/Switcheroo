@@ -1,25 +1,32 @@
 [gd_scene format=3 uid="uid://b8gvka8fkesla"]
 
 [ext_resource type="PackedScene" uid="uid://b8txd41214kk0" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cyodblnqqcuug" path="res://launch_pad.tscn" id="2_0xm2m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
-albedo_color = Color(0, 0.6350954, 0.82599455, 1)
+albedo_color = Color(1, 0.1764706, 0, 1)
 
 [node name="Main" type="Node3D" unique_id=2039875954]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=509782951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03059256, -0.51215035, 0.07757115)
 use_collision = true
-size = Vector3(30, 1, 30)
+size = Vector3(10, 1, 10)
 
 [node name="Player" parent="." unique_id=1739033751 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0608797, 4.2654133, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7207627, 4.2654133, 0)
 
 [node name="DummyTarget" parent="." unique_id=1505120804 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8398175, 4.2654133, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6877313, 4.2654133, 0)
 is_controlled = false
 
 [node name="MeshInstance3D" parent="DummyTarget" index="1" unique_id=825450219]
 material_override = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="LaunchPad" parent="." unique_id=988074978 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7401066, 0, -3.4573846)
+
+[node name="LaunchPad2" parent="." unique_id=89932914 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6711085, 0, 3.7884479)
 
 [editable path="DummyTarget"]
